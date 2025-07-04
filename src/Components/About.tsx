@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { ChevronRight } from 'lucide-react'
 import profile from '../assets/profile2.jpg' // Adjust the path as necessary
 

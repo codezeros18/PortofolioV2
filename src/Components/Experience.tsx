@@ -1,7 +1,6 @@
 import { useRef, useState } from 'react';
 import { ChevronRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Scrollbar } from 'swiper/modules';
 import 'swiper/css'
 
 const Experience = () => {
