@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+// @ts-ignore
+import { HashLink } from 'react-router-hash-link'
 
 const navItems = [
   { number: '01.', label: 'About', href: '#about' },
@@ -27,17 +29,22 @@ const Navbar = () => {
     <header className="font-fira bg-navy text-light-slate fixed w-full z-50">
       <div className="w-full px-6 lg:px-12 h-[100px] flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="text-green text-xl font-bold border-3 px-1 border-green">
+        <a href="/" className="text-green text-xl font-bold border-3 px-1 border-green">
           L
         </a>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-x-6">
           {navItems.map(({ number, label, href }) => (
-            <a key={label} href={href} className="text-[13px] leading-[17px] flex items-center gap-1">
-              <span className="text-green">{number}</span>
-              <span className="text-lightest-slate">{label}</span>
-            </a>
+            <HashLink
+          to={href}
+          smooth
+          onClick={closeMenu}
+          className="text-[14px] text-lightest-slate flex items-center gap-2"
+        >
+          <span className="text-green">{number}</span>
+          <span>{label}</span>
+        </HashLink>
           ))}
           <a
             href="/resume.pdf"

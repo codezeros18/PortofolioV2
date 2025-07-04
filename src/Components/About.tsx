@@ -21,7 +21,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="bg-navy text-light-slate font-inter h-[110vh] md:min-h-screen flex items-center "
+      className="scroll-mt-28 bg-navy text-light-slate font-inter h-[110vh] md:h-[120vh] lg:h-[80vh] flex items-center "
     >
       <div className="max-w-5xl mx-auto md:mx-24 md:px-14 lg:mx-auto px-8 py-24">
         <div className="grid md:grid-cols-7 gap-12 items-start">

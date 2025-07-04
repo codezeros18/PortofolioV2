@@ -61,8 +61,8 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
   ]
 
   return (
-    <section id="experience" className="bg-navy text-light-slate font-inter h-[110vh] md:min-h-screen flex items-center">
-      <div className="mx-auto max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
+    <section id="experience" className="scroll-mt-[100px] bg-navy text-light-slate font-inter h-[110vh] md:h-[100vh] lg:h-[80vh] flex items-center">
+      <div className="mx-auto md:max-w-2xl lg:max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
         {/* Section Heading */}
         <div className="flex items-center gap-4 mb-6">
           <span className="text-green text-[16px] font-[600] font-fira">02.</span>
