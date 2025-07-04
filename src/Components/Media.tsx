@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { Github, Instagram, Twitter, Linkedin, Code } from 'lucide-react'
 
 const socials = [
