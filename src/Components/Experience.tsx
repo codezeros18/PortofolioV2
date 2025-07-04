@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { ChevronRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+// @ts-ignore
 import 'swiper/css'
 
 const Experience = () => {
