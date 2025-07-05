@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { Github, ExternalLink } from 'lucide-react'
 import img1 from '../assets/project.png'
 import img2 from '../assets/project.png' // replace with different image

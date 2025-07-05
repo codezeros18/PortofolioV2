@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Hash, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 // @ts-ignore
 import { HashLink } from 'react-router-hash-link'
 

@@ -1,5 +1,5 @@
-// import React from 'react'
-import { Star } from 'lucide-react'
+// // import React from 'react'
+// import { Star } from 'lucide-react'
 import { Github, Instagram, Twitter, Linkedin, Code } from 'lucide-react'
 
 const socials = [
