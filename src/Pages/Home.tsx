@@ -5,7 +5,7 @@ import Header from '../Components/Header'
 import Media from '../Components/Media'
 import Email from '../Components/Email'
 import Experience from '../Components/Experience'
-// import Project from '../Components/Project'
+import Project from '../Components/Project'
 import Contact from '../Components/Contact'
 import About from '../Components/About'
 import { useLocation } from 'react-router-dom'
@@ -35,7 +35,7 @@ const Home = () => {
       <Email />
       <About />
       <Experience />
-      {/* <Project /> */}
+      <Project />
       <Contact />
       <Footer />
     </div>

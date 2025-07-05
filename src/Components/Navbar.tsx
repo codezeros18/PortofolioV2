@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Hash, Menu, X } from 'lucide-react'
 // @ts-ignore
 import { HashLink } from 'react-router-hash-link'
 
@@ -37,19 +37,19 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center gap-x-6">
           {navItems.map(({ number, label, href }) => (
             <HashLink
-          to={href}
-          smooth
-          onClick={closeMenu}
-          className="text-[14px] text-lightest-slate flex items-center gap-2"
-        >
-          <span className="text-green">{number}</span>
-          <span>{label}</span>
-        </HashLink>
+              to={href}
+              smooth
+              onClick={closeMenu}
+              className="text-[14px] text-lightest-slate flex items-center gap-2"
+            >
+              <span className="text-green">{number}</span>
+              <span>{label}</span>
+            </HashLink>
           ))}
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="../assets/cv.pdf"
+            download={true}
+    
             className="border border-green text-green rounded px-4 py-2 text-[13px] leading-[17px]"
           >
             Resume
@@ -74,20 +74,20 @@ const Navbar = () => {
       >
         <div className="p-6 flex flex-col gap-6 mt-20">
           {navItems.map(({ number, label, href }) => (
-            <a
+            <HashLink
               key={label}
-              href={href}
+              to={href}
               onClick={closeMenu}
               className="text-[14px] text-lightest-slate flex items-center gap-2"
             >
               <span className="text-green">{number}</span>
               <span>{label}</span>
-            </a>
+            </HashLink>
           ))}
           <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="../assets/cv.pdf"
+            download={true}
+    
             className="mt-4 border border-green rounded px-4 py-2 text-center text-sm text-green"
           >
             Resume
