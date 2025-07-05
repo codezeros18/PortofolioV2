@@ -1,6 +1,6 @@
 // import React from 'react'
 import { Github, ExternalLink } from 'lucide-react'
-import img1 from '../assets/project.png'
+import img1 from '../assets/capstone.jpg'
 import img2 from '../assets/project.png' // replace with different image
 import img3 from '../assets/fiver2.png' // replace with different image
 
@@ -39,13 +39,13 @@ const projects = [
 
 const Project = () => {
   return (
-    <section id="projects" className="scroll-mt-28 bg-navy text-light-slate font-inter py-24">
-      <div className="max-w-5xl mx-auto px-6">
+    <section id="projects" className="scroll-mt-28 bg-navy text-light-slate font-inter min-h-screen">
+      <div className="md:max-w-2xl lg:max-w-5xl mx-auto md:px-10 lg:px-6">
         {/* Section Header */}
-        <div className="mb-12">
+        <div className="mb-12 mx-6 md:mx-0">
           <div className="flex items-center gap-4">
             <span className="text-green text-[16px] font-fira">03.</span>
-            <h2 className="text-[26px] md:text-[32px] font-semibold text-lightest-slate">
+            <h2 className="text-[20px] md:text-[32px] font-semibold text-lightest-slate">
               Some Things I’ve Built
             </h2>
             <div className="flex-grow h-[1px] bg-lightest-navy mt-2" />
@@ -62,66 +62,75 @@ const Project = () => {
             key={i}
             className={`relative flex flex-col ${
               isEven ? 'md:flex-row-reverse' : 'md:flex-row'
-            } items-center md:items-start group min-h-[42vh] md:min-h-[50vh] mb-0 md:mb-10`}
+            } items-center md:items-start h-auto mb-0 md:mb-24`}
           >
             {/* Background Image */}
+            {/* Desktop-only absolute image */}
             <div
-              className={`absolute top-0 ${
+              className={`hidden md:block absolute top-0 ${
                 isEven ? 'md:left-0' : 'md:right-0'
               } w-auto h-auto rounded overflow-hidden z-0`}
             >
-              <div className="absolute inset-0 bg-green opacity-0 md:opacity-[0.1] mix-blend-screen z-10" />
+              <div className="absolute inset-0 bg-green opacity-[0.1] mix-blend-screen z-10" />
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-[52vh] w-[80vh] md:h-[50vh] object-cover opacity-10 md:opacity-60 mix-blend-lighten md:group-hover:opacity-100 transition duration-300 rounded object-center"
+                className="h-[52vh] w-[80vh] object-cover opacity-60 mix-blend-lighten group-hover:opacity-100 transition duration-300 rounded object-center"
               />
-
             </div>
-
             {/* Text Content */}
               <div
-                className={`relative z-10 md:w-[50%] ${
+                className={`relative z-0 md:w-[50%] ${
                   isEven ? 'md:text-right' : 'md:text-left'
-                } text-left p-6 md:p-0`}
+                } text-left p-6 mx-6 md:mx-0 my-4 md:my-0 shadow-lg md:shadow-none md:p-0 bg-cover bg-center md:bg-none`}
+                style={{
+                  backgroundImage:
+                    typeof window !== 'undefined' && window.innerWidth < 768
+                      ? `url(${project.image})`
+                      : 'none',
+                }}
               >
-              <p className="text-green font-fira text-sm mb-1">Featured Project</p>
-              <h3 className="text-xl md:text-2xl font-semibold text-lightest-slate">
-                {project.title}
-              </h3>
-              <div className="bg-transparent md:bg-[#112240] px-0 md:px-5 py-4 my-4 shadow-lg rounded-sm">
-                <p className="leading-[23.4px] font-[400] text-[16px] text-slate">
-                  {project.description}
-                </p>
-              </div>
-              <div
-                className={`flex flex-col gap-2 text-xs text-slate font-fira ${
-                  isEven ? 'md:items-end' : 'md:items-start'
-                }`}
-              >
-                <ul className="flex flex-wrap gap-4">
-                  {project.tech.map((tech, j) => (
-                    <li key={`tech1-${j}`}>{tech}</li>
-                  ))}
-                </ul>
-                <ul className="flex flex-wrap gap-4">
-                  {project.tech2.map((tech, j) => (
-                    <li key={`tech2-${j}`}>{tech}</li>
-                  ))}
-                </ul>
-              </div>
+            {/* Optional dark overlay only on mobile */}
+            <div className="absolute inset-0 bg-navy opacity-90 md:hidden z-0" />
+              <div className='relative z-10'>
+                <p className="text-green font-fira text-sm leading-[24px] mb-1">Featured Project</p>
+                <h3 className="text-[22px] leading-[26.4px] font-[600] md:text-[24px] tracking-normal text-lightest-slate">
+                  {project.title}
+                </h3>
+                <div className="bg-transparent md:bg-[#112240] px-0 md:px-5 py-4 my-4 shadow-none md:shadow-lg rounded-sm">
+                  <p className="leading-[23.4px] font-[400] text-[16px] text-light-slate">
+                    {project.description}
+                  </p>
+                </div>
+                <div
+                  className={`flex flex-col gap-2 text-xs text-slate font-fira ${
+                    isEven ? 'md:items-end' : 'md:items-start'
+                  }`}
+                >
+                  <ul className="flex flex-wrap gap-4">
+                    {project.tech.map((tech, j) => (
+                      <li className='text-[13px] leading-[16.9px] font-[400] text-light-slate' key={`tech1-${j}`}>{tech}</li>
+                    ))}
+                  </ul>
+                  <ul className="flex flex-wrap gap-4">
+                    {project.tech2.map((tech, j) => (
+                      <li className='text-[13px] leading-[16.9px] font-[400] text-light-slate' key={`tech2-${j}`}>{tech}</li>
+                    ))}
+                  </ul>
+                </div>
 
-              <div
-                className={`flex gap-4 mt-4 text-light-slate ${
-                  isEven ? 'md:justify-end' : 'md:justify-start'
-                }`}
-              >
-                <a href={project.github} target="_blank" rel="noopener noreferrer">
-                  <Github className="w-5 h-5 hover:text-green transition" />
-                </a>
-                <a href={project.external} target="_blank" rel="noopener noreferrer">
-                  <ExternalLink className="w-5 h-5 hover:text-green transition" />
-                </a>
+                <div
+                  className={`flex gap-4 mt-4 text-lightest-slate ${
+                    isEven ? 'md:justify-end' : 'md:justify-start'
+                  }`}
+                >
+                  <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-5 h-5 hover:text-green transition" />
+                  </a>
+                  <a href={project.external} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-5 h-5 hover:text-green transition" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
