@@ -1,4 +1,5 @@
 import {Github, FolderGit2 } from 'lucide-react'
+import { motion } from 'framer-motion'
 
 const projects = [
      {
@@ -47,8 +48,13 @@ const Archive = () => {
         {/* Project Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {projects.map((project, i) => (
-            <div
+            <motion.div
               key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 0.5, delay: i * 0.1, ease: 'easeOut' }}
+
               className="bg-light-navy hover:-translate-y-2 hover:shadow-lg transition duration-300 rounded cursor-pointer py-8 px-6 md:py-10 md:px-8 flex flex-col justify-between"
             >
               <div>
@@ -70,7 +76,7 @@ const Archive = () => {
                   <li key={t}>{t}</li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

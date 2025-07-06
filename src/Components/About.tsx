@@ -1,6 +1,10 @@
 // import React from 'react'
 import { ChevronRight } from 'lucide-react'
+// @ts-ignore
 import profile from '../assets/profile2.jpg' // Adjust the path as necessary
+import { motion, useAnimation } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
+import { useEffect } from 'react'
 
 const About = () => {
   const techStack = [
@@ -20,13 +24,24 @@ const About = () => {
     "MySQL",
     "Folium"
   ]
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
+
+  useEffect(() => {
+    if (inView) controls.start({ opacity: 1, y: 0 })
+  }, [inView, controls])
 
   return (
     <section
       id="about"
       className="scroll-mt-[150px] md:scroll-mt-28 bg-navy text-light-slate font-inter h-[120vh] lg:h-[80vh] flex items-center "
     >
-      <div className="max-w-5xl mx-auto md:mx-24 md:px-14 lg:mx-auto px-8 py-24">
+      <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 60 }}
+          animate={controls}
+          transition={{ duration: 0.8, ease: 'easeOut' }} 
+        className="max-w-5xl mx-auto md:mx-24 md:px-14 lg:mx-auto px-8 py-24">
         <div className="grid md:grid-cols-7 gap-12 items-start">
           {/* Text Content */}
           <div className='grid col-span-4'>
@@ -60,25 +75,23 @@ const About = () => {
             </ul>
           </div>
           {/* Image */}
-<div className="col-span-3 flex items-center justify-center md:justify-end h-full">
-  <div className="relative h-[40vh] aspect-square group">
-    {/* Image */}
-    <div className="relative z-10 overflow-hidden h-full">
-      <img
-        src={profile} // your image import
-        alt="Profile"
-        className="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-      />
-    </div>
+          <div className="col-span-3 flex items-center justify-center md:justify-end h-full">
+            <div className="relative h-[40vh] aspect-square group">
+              {/* Image */}
+              <div className="relative z-10 overflow-hidden h-full">
+                <img
+                  src={profile} // your image import
+                  alt="Profile"
+                  className="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                />
+              </div>
 
-    {/* Border box */}
-    <div className="absolute top-3 left-3 h-[40vh] aspect-square border-2 border-green z-0 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-300" />
-  </div>
-</div>
-
-
+              {/* Border box */}
+              <div className="absolute top-3 left-3 h-[40vh] aspect-square border-2 border-green z-0 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-300" />
+            </div>
+          </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

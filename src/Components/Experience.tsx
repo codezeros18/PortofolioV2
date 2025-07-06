@@ -1,12 +1,25 @@
 import { useRef, useState } from 'react';
 import { ChevronRight } from 'lucide-react'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { useInView } from 'react-intersection-observer'
+import { useEffect } from 'react'
 // @ts-ignore
 import 'swiper/css'
+import { motion, AnimatePresence,  useAnimation } from 'framer-motion'
+
 
 const Experience = () => {
   const [activeIndex, setActiveIndex] = useState(0)
-const scrollRef = useRef<HTMLDivElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
+  const controls = useAnimation()
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({ opacity: 1, y: 0 })
+    }
+  }, [inView, controls])
+
 
   const experiences = [
     {
@@ -62,7 +75,12 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <section id="experience" className="scroll-mt-[0px] md:scroll-mt-[40px] bg-navy text-light-slate font-inter h-[110vh] md:h-[100vh] flex items-center">
-      <div className="mx-auto md:max-w-2xl lg:max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
+      <motion.div 
+        ref={ref}
+        initial={{ opacity: 0, y: 40 }}
+        animate={controls}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
+        className="mx-auto md:max-w-2xl lg:max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
         {/* Section Heading */}
         <div className="flex items-center gap-4 mb-6">
             <span className="text-green text-[18px] md:text-[20px] font-fira">02.</span>
@@ -72,7 +90,12 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
           <div className="flex-grow h-[0.5px] bg-lightest-navy mt-2" />
         </div>
 
-        <div className="grid md:grid-cols-4 gap-y-8 gap-x-0 md:gap-x-8 md:gap-y-0 items-start">
+        <motion.div 
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={controls}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="grid md:grid-cols-4 gap-y-8 gap-x-0 md:gap-x-8 md:gap-y-0 items-start">
           {/* Mobile Swiper Tabs */}
          <div className="relative block md:hidden col-span-4 w-full overflow-hidden">
             {/* Scrollable Tabs Container */}
@@ -124,31 +147,36 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
           </div>
 
           {/* Content Area */}
-          <div
-            key={activeIndex}
-            className="md:col-span-3 min-h-[300px] transition-opacity duration-500 ease-in-out opacity-100 animate-[fadeIn_0.4s_ease-in-out]"
-            style={{ animation: 'fadeIn 0.4s ease-in-out' }}
-          >
-            <h3 className="text-[22px] md:text-xl leading-[28.6px] font-[500] text-lightest-slate">
-              {experiences[activeIndex].role}{" "}
-              <span className="text-green">@ {experiences[activeIndex].organization}</span>
-            </h3>
-            <p className="text-[14px] leading-[20px] font-[400] font-fira text-slate mt-1 mb-4">
-              {experiences[activeIndex].date}
-            </p>
+          {/* Content Area with Animation */}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              className="md:col-span-3 min-h-[300px]"
+            >
+              <h3 className="text-[22px] md:text-xl leading-[28.6px] font-[500] text-lightest-slate">
+                {experiences[activeIndex].role}{" "}
+                <span className="text-green">@ {experiences[activeIndex].organization}</span>
+              </h3>
+              <p className="text-[14px] leading-[20px] font-[400] font-fira text-slate mt-1 mb-4">
+                {experiences[activeIndex].date}
+              </p>
 
-            <ul className="flex flex-col gap-3 text-sm text-slate">
-              {experiences[activeIndex].points.map((point, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <ChevronRight size={14} className="text-green flex-shrink-0 mt-1" />
-                  <span className='text-[14px] leading-[22px] font-[400]'>{point}</span>
-                </li>
-
-              ))}
-            </ul>
-          </div>
-        </div>
-      </div>
+              <ul className="flex flex-col gap-3 text-sm text-slate">
+                {experiences[activeIndex].points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-2">
+                    <ChevronRight size={14} className="text-green flex-shrink-0 mt-1" />
+                    <span className='text-[14px] leading-[22px] font-[400]'>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

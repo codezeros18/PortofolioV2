@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
 // @ts-ignore
 import { HashLink } from 'react-router-hash-link'
+import { motion } from 'framer-motion'
 
 const navItems = [
   { number: '01.', label: 'About', href: '#about' },
@@ -60,35 +61,71 @@ const Navbar = () => {
           } flex items-center justify-between`}
         >
           {/* Logo */}
-          <a
-            href="/"
-            className="text-green text-xl font-bold border-3 px-1 border-green"
-          >
-            L
-          </a>
+          <div className="w-12 h-12 relative">
+            {/* Outer hexagon (border color) */}
+            <div className="absolute inset-0 bg-green clip-hexagon"></div>
+
+            {/* Inner hexagon (background match) */}
+            <div className="absolute inset-[2px] bg-navy clip-hexagon flex items-center font-inter justify-center text-green font-[700] text-xl">
+              L
+            </div>
+          </div>
+
+
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-x-8">
+          <motion.nav
+            className="hidden md:flex items-center gap-x-8"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: {
+                  staggerChildren: 0.08, // delay between links
+                },
+              },
+            }}
+          >
             {navItems.map(({ number, label, href }) => (
-              <HashLink
+              <motion.div
                 key={label}
-                to={href}
-                smooth
-                onClick={closeMenu}
-                className="text-[13px] text-lightest-slate flex items-center gap-1 hover:text-[#64ffda] transition duration-600 ease-in-out"
+                variants={{
+                  hidden: { opacity: 0, y: -10 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.9, ease: 'easeInOut' }}
               >
-                <span className="text-green">{number}</span>
-                <span>{label}</span>
-              </HashLink>
+                <HashLink
+                  to={href}
+                  smooth
+                  onClick={closeMenu}
+                  className="text-[13px] text-lightest-slate flex items-center gap-1 hover:text-[#64ffda] transition duration-600 ease-in-out"
+                >
+                  <span className="text-green">{number}</span>
+                  <span>{label}</span>
+                </HashLink>
+              </motion.div>
             ))}
-            <a
-              href="resume.pdf"
-              download
-              className="inline-flex items-center justify-center border border-green text-green rounded px-4 py-[10px] text-[14px] leading-[17px] font-mono transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0_#64ffda]"
+
+            {/* Resume button can animate too */}
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: -10 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
             >
-              Resume
-            </a>
-          </nav>
+              <a
+                href="resume.pdf"
+                download
+                className="inline-flex items-center justify-center border border-green text-green rounded px-4 py-[10px] text-[14px] leading-[17px] font-mono transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0_#64ffda]"
+              >
+                Resume
+              </a>
+            </motion.div>
+          </motion.nav>
+
 
           {/* Hamburger Icon */}
           <button
