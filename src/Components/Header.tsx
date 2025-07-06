@@ -1,4 +1,7 @@
 // import React from 'react'
+// @ts-ignore
+import { HashLink } from 'react-router-hash-link'
+
 
 const Header = () => {
   return (
@@ -17,16 +20,16 @@ const Header = () => {
         <p className="text-[16px] tracking-tight md:text-[18px] max-w-[500px] leading-[23px] md:leading-[26px] text-slate mt-4">
           I’m a developer shifting into data science. Blending my web background with data, I’m exploring creative and analytical problem-solving through my studies.
         </p>
-        <div className="mt-6">
-          <a
-            href="/resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-           className="inline-flex items-center justify-center border border-green text-green rounded px-8 py-4 text-[14px] leading-[17px] font-mono transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0_#64ffda]"
-          >
-            Know me better!
-          </a>
-        </div>
+       <div className="mt-6">
+  <HashLink
+    smooth
+    to="#about"
+    className="inline-flex items-center justify-center border border-green text-green rounded px-8 py-4 text-[14px] leading-[17px] font-mono transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0_#64ffda]"
+  >
+    Know me better!
+  </HashLink>
+</div>
+
       </div>
     </section>
   )

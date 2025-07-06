@@ -8,7 +8,7 @@ const projects = [
   {
   title: 'Project Capstone',
   description:
-    'A data science project using Python to analyze real-world datasets through visualization and machine learning. Built with Jupyter, Pandas, and Scikit-learn for academic insights and predictions.',
+    'Analyzed real-world data to uncover insights and make predictive models through visual exploration and experimentation. Focused on real academic challenges with measurable outcomes.',
   tech: ['Python', 'Jupyter', 'Pandas', 'NumPy'],
   tech2: ['Matplotlib', 'Seaborn', 'Scikit-learn'],
   github: '#',
@@ -18,7 +18,7 @@ const projects = [
 {
   title: '2D Pixel Game',
   description:
-    'An interactive 2D pixel game inspired by Stardew Valley. Built with React and Tiled Map Editor, featuring animated sprites, tile-based maps, and a nostalgic aesthetic.',
+    'A retro-style farming adventure game featuring tile-based maps, animated characters, and interactive gameplay. Designed with a nostalgic pixel art aesthetic.',
   tech: ['React', 'JavaScript', 'Tailwind CSS'],
   tech2: ['Vite', 'Tiled Map Editor'],
   github: 'https://github.com/codezeros18/pti',
@@ -28,18 +28,19 @@ const projects = [
 {
   title: 'Fiver Home Cloning',
   description:
-    'A responsive clone of Fiverr’s homepage using React, TypeScript, and Tailwind CSS. Features clean UI components and layout inspired by a real-world platform.',
+    'A pixel-perfect remake of a popular freelance platform’s landing page. Rebuilt the layout and components with attention to responsiveness and visual consistency.',
   tech: ['React', 'TypeScript', 'HeroIcons'],
   tech2: ['Tailwind CSS', 'Vite'],
   github: 'https://github.com/codezeros18/fiverr',
   external: 'https://codezeros18.github.io/fiverr/',
   image: img3,
 }
+
 ]
 
 const Project = () => {
   return (
-    <section id="projects" className="scroll-mt-28 bg-navy text-light-slate font-inter min-h-screen">
+    <section id="project" className="scroll-mt-28 bg-navy text-light-slate font-inter min-h-screen">
       <div className="md:max-w-2xl lg:max-w-5xl mx-auto md:px-10 lg:px-6">
         {/* Section Header */}
         <div className="mb-12 mx-6 md:mx-0">
@@ -67,7 +68,7 @@ const Project = () => {
             {/* Background Image */}
             {/* Desktop-only absolute image */}
             <div
-              className={`group hidden md:block absolute top-0 ${
+              className={`group hidden md:block absolute cursor-pointer top-0 ${
                 isEven ? 'md:left-0' : 'md:right-0'
               } w-auto h-auto rounded overflow-hidden z-0`}
             >
@@ -75,7 +76,7 @@ const Project = () => {
               <img
                 src={project.image}
                 alt={project.title}
-                className="h-[52vh] w-[80vh] object-cover opacity-60 mix-blend-lighten group-hover:opacity-100 transition duration-300 rounded object-center"
+                className="h-[52vh] w-[80vh] object-cover opacity-60 mix-blend-lighten group-hover:opacity-100 transition duration-500 rounded object-center"
               />
             </div>
             {/* Text Content */}

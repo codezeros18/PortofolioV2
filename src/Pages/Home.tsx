@@ -8,6 +8,7 @@ import Experience from '../Components/Experience'
 import Project from '../Components/Project'
 import Contact from '../Components/Contact'
 import About from '../Components/About'
+import Archive from '../Components/Archive'
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 
@@ -28,7 +29,7 @@ const Home = () => {
 }, [location])
 
   return (
-    <div className="bg-navy text-white min-h-screen w-full flex flex-col scroll-smooth">
+    <div className="bg-navy text-white min-h-screen w-full flex flex-col scroll-smooth overflow-x-hidden">
       <Navbar />
       <Header />
       <Media />
@@ -36,6 +37,7 @@ const Home = () => {
       <About />
       <Experience />
       <Project />
+      <Archive />
       <Contact />
       <Footer />
     </div>

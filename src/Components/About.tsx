@@ -16,12 +16,15 @@ const About = () => {
     "Seaborn",
     "Git & GitHub",
     "scikit-learn",
+    "Pyplot",
+    "MySQL",
+    "Folium"
   ]
 
   return (
     <section
       id="about"
-      className="scroll-mt-28 bg-navy text-light-slate font-inter h-[110vh] md:h-[120vh] lg:h-[80vh] flex items-center "
+      className="scroll-mt-[150px] md:scroll-mt-28 bg-navy text-light-slate font-inter h-[120vh] lg:h-[80vh] flex items-center "
     >
       <div className="max-w-5xl mx-auto md:mx-24 md:px-14 lg:mx-auto px-8 py-24">
         <div className="grid md:grid-cols-7 gap-12 items-start">
