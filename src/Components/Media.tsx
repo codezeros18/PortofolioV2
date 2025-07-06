@@ -1,5 +1,5 @@
 // import React from 'react'
-import { Github, Instagram, Twitter, Linkedin, Code } from 'lucide-react'
+import { Github, Instagram, Twitter, Linkedin} from 'lucide-react'
 
 const socials = [
   { icon: <Github size={18} />, href: 'https://github.com/codezeros18' },
