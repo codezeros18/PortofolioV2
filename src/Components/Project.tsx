@@ -15,8 +15,8 @@ const Project = () => {
       'Analyzed real-world data to uncover insights and make predictive models through visual exploration and experimentation. Focused on real academic challenges with measurable outcomes.',
     tech: ['Python', 'Jupyter', 'Pandas', 'NumPy'],
     tech2: ['Matplotlib', 'Seaborn', 'Scikit-learn'],
-    github: '#',
-    external: '#',
+    github: 'https://github.com/codezeros18/',
+    external: 'https://github.com/codezeros18/',
     image: img1,
   },
   {

@@ -112,7 +112,7 @@ const Experience = () => {
                   <SwiperSlide key={exp.organization} className="!w-auto">
                     <button
                       onClick={() => setActiveIndex(idx)}
-                      className={`whitespace-nowrap px-4 py-2 font-mono text-[14px] leading-[20px] font-[400] border-b-2 transition-all ${
+                      className={`whitespace-nowrap px-4 py-2 font-fira text-[14px] leading-[20px] font-[400] border-b-2 transition-all ${
                         idx === activeIndex
                           ? 'text-green border-green bg-light-navy'
                           : 'text-slate border-transparent hover:bg-light-navy/30'
@@ -129,22 +129,29 @@ const Experience = () => {
 
 
 
-          {/* Desktop Sidebar Tabs */}
-          <div className="hidden md:flex flex-col text-left border-l-2 border-lightest-navy">
+          <div className="hidden md:flex flex-col border-l border-lightest-navy">
             {experiences.map((exp, idx) => (
               <button
                 key={exp.organization}
                 onClick={() => setActiveIndex(idx)}
-                className={`pl-4 py-2 font-mono text-sm text-left border-l-2 transition-all cursor-pointer ${
-                  idx === activeIndex
-                    ? 'text-green border-green bg-light-navy'
-                    : 'text-slate hover:bg-[#112240] border-transparent'
-                }`}
+                className={`relative pl-6 pr-4 py-3 font-fira text-[13px] text-left transition-colors cursor-pointer duration-300 ease-in-out
+                  ${
+                    idx === activeIndex
+                      ? 'text-green'
+                      : 'text-slate hover:text-green'
+                  }`}
               >
+                {/* Animated vertical line */}
+                <span
+                  className={`absolute left-0 top-0 h-full w-[2px] bg-green transition-all duration-300 ${
+                    idx === activeIndex ? 'opacity-100' : 'opacity-0'
+                  }`}
+                />
                 {exp.organization}
               </button>
             ))}
           </div>
+
 
           {/* Content Area */}
           {/* Content Area with Animation */}
