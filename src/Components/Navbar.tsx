@@ -13,7 +13,6 @@ const navItems = [
 const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0)
   const [showNavbar, setShowNavbar] = useState(true)
-  const [hasShadow, setHasShadow] = useState(false)
   const [isShrunk, setIsShrunk] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
 
@@ -24,7 +23,6 @@ const Navbar = () => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY
 
-      setHasShadow(currentScrollY > 10)
       setIsShrunk(currentScrollY > 10)
 
       if (currentScrollY > lastScrollY && currentScrollY > 100) {
