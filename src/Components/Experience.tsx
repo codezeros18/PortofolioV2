@@ -61,12 +61,14 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
   ]
 
   return (
-    <section id="experience" className="scroll-mt-[100px] bg-navy text-light-slate font-inter h-[110vh] md:h-[100vh] lg:h-[80vh] flex items-center">
+    <section id="experience" className="scroll-mt-[100px] bg-navy text-light-slate font-inter h-[110vh] md:h-[100vh] flex items-center">
       <div className="mx-auto md:max-w-2xl lg:max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
         {/* Section Heading */}
         <div className="flex items-center gap-4 mb-6">
-          <span className="text-green text-[16px] font-[600] font-fira">02.</span>
-          <h2 className="text-[26px] md:text-[32px] font-[600] text-lightest-slate">Experience</h2>
+            <span className="text-green text-[18px] md:text-[20px] font-fira">02.</span>
+            <h2 className="text-[24px] md:text-[26px] font-semibold text-lightest-slate">
+              Experience
+            </h2>
           <div className="flex-grow h-[0.5px] bg-lightest-navy mt-2" />
         </div>
 
@@ -110,10 +112,10 @@ const scrollRef = useRef<HTMLDivElement | null>(null);
               <button
                 key={exp.organization}
                 onClick={() => setActiveIndex(idx)}
-                className={`pl-4 py-2 font-mono text-sm text-left border-l-2 transition-all ${
+                className={`pl-4 py-2 font-mono text-sm text-left border-l-2 transition-all cursor-pointer ${
                   idx === activeIndex
                     ? 'text-green border-green bg-light-navy'
-                    : 'text-slate hover:bg-light-navy/30 border-transparent'
+                    : 'text-slate hover:bg-[#112240] border-transparent'
                 }`}
               >
                 {exp.organization}

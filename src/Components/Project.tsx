@@ -43,9 +43,9 @@ const Project = () => {
       <div className="md:max-w-2xl lg:max-w-5xl mx-auto md:px-10 lg:px-6">
         {/* Section Header */}
         <div className="mb-12 mx-6 md:mx-0">
-          <div className="flex items-center gap-4">
-            <span className="text-green text-[16px] font-fira">03.</span>
-            <h2 className="text-[20px] md:text-[32px] font-semibold text-lightest-slate">
+          <div className="flex items-center gap-2">
+            <span className="text-green text-[18px] md:text-[20px] font-fira">03.</span>
+            <h2 className="text-[24px] md:text-[26px] font-semibold text-lightest-slate">
               Some Things I’ve Built
             </h2>
             <div className="flex-grow h-[1px] bg-lightest-navy mt-2" />
@@ -67,11 +67,11 @@ const Project = () => {
             {/* Background Image */}
             {/* Desktop-only absolute image */}
             <div
-              className={`hidden md:block absolute top-0 ${
+              className={`group hidden md:block absolute top-0 ${
                 isEven ? 'md:left-0' : 'md:right-0'
               } w-auto h-auto rounded overflow-hidden z-0`}
             >
-              <div className="absolute inset-0 bg-green opacity-[0.1] mix-blend-screen z-10" />
+              <div className="absolute inset-0 bg-green-900 opacity-50 mix-blend-screen z-10" />
               <img
                 src={project.image}
                 alt={project.title}
@@ -91,13 +91,13 @@ const Project = () => {
                 }}
               >
             {/* Optional dark overlay only on mobile */}
-            <div className="absolute inset-0 bg-navy opacity-90 md:hidden z-0" />
+            <div className="absolute inset-0 bg-navy opacity-[95%] md:hidden z-0" />
               <div className='relative z-10'>
-                <p className="text-green font-fira text-sm leading-[24px] mb-1">Featured Project</p>
-                <h3 className="text-[22px] leading-[26.4px] font-[600] md:text-[24px] tracking-normal text-lightest-slate">
+                <p className="text-green font-fira text-sm md:text-[13px] leading-[24px] mb-1">Featured Project</p>
+                <h3 className="text-[22px] leading-[26.4px] font-[600] md:text-[24px] hover:text-[#64ffda] transition duration-500 cursor-pointer tracking-normal text-lightest-slate">
                   {project.title}
                 </h3>
-                <div className="bg-transparent md:bg-[#112240] px-0 md:px-5 py-4 my-4 shadow-none md:shadow-lg rounded-sm">
+                <div className="bg-transparent md:bg-[#112240] px-0 md:px-6 py-6 my-4 shadow-none md:shadow-lg rounded-sm">
                   <p className="leading-[23.4px] font-[400] text-[16px] text-light-slate">
                     {project.description}
                   </p>
@@ -125,10 +125,10 @@ const Project = () => {
                   }`}
                 >
                   <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-5 h-5 hover:text-green transition" />
+                    <Github className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
                   </a>
                   <a href={project.external} target="_blank" rel="noopener noreferrer">
-                    <ExternalLink className="w-5 h-5 hover:text-green transition" />
+                    <ExternalLink className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
                   </a>
                 </div>
               </div>

@@ -28,8 +28,10 @@ const About = () => {
           {/* Text Content */}
           <div className='grid col-span-4'>
             <div className="flex items-center gap-4 mb-6">
-              <span className="text-green text-[16px] font-[600] leading-[35px] font-fira">01.</span>
-              <h2 className="text-[26px] md:text-[32px]  leading-[35px] font-[600] text-lightest-slate">About Me</h2>
+              <span className="text-green text-[18px] md:text-[20px] font-fira">01.</span>
+              <h2 className="text-[24px] md:text-[26px] font-semibold text-lightest-slate">
+                About Me
+              </h2>
               <div className="flex-grow h-[0.5px] bg-lightest-navy mt-2" />
             </div>
 
@@ -55,18 +57,22 @@ const About = () => {
             </ul>
           </div>
           {/* Image */}
-          <div className="col-span-3 flex justify-center md:justify-end">
-            <div className="relative w-40 md:w-64 aspect-square group">
-              <div className="relative z-10 overflow-hidden">
-                <img
-                  src={profile} // your image import
-                  alt="Profile"
-                  className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                />
-              </div>
-              <div className="absolute top-3 left-3 w-full h-full border-2 border-green z-0 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-300" />
-            </div>
-          </div>
+<div className="col-span-3 flex items-center justify-center md:justify-end h-full">
+  <div className="relative h-[40vh] aspect-square group">
+    {/* Image */}
+    <div className="relative z-10 overflow-hidden h-full">
+      <img
+        src={profile} // your image import
+        alt="Profile"
+        className="h-full w-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+      />
+    </div>
+
+    {/* Border box */}
+    <div className="absolute top-3 left-3 h-[40vh] aspect-square border-2 border-green z-0 group-hover:translate-x-1 group-hover:translate-y-1 transition duration-300" />
+  </div>
+</div>
+
 
         </div>
       </div>

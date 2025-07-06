@@ -14,7 +14,7 @@ const Header = () => {
           I build things with code
         </h2>
 
-        <p className="text-[18px] tracking-tight md:text-[20px] max-w-2xl leading-[23px] md:leading-[26px] text-slate mt-4">
+        <p className="text-[16px] tracking-tight md:text-[18px] max-w-[500px] leading-[23px] md:leading-[26px] text-slate mt-4">
           I’m a developer shifting into data science. Blending my web background with data, I’m exploring creative and analytical problem-solving through my studies.
         </p>
         <div className="mt-6">
@@ -22,7 +22,7 @@ const Header = () => {
             href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-fira inline-block border border-green text-green rounded px-6 py-4 text-[14px] leading-[14px] font-[500] hover:bg-green/10 transition"
+           className="inline-flex items-center justify-center border border-green text-green rounded px-8 py-4 text-[14px] leading-[17px] font-mono transition-all duration-300 ease-in-out hover:scale-[1.03] hover:-translate-x-[2px] hover:-translate-y-[2px] hover:shadow-[4px_4px_0_0_#64ffda]"
           >
             Know me better!
           </a>
