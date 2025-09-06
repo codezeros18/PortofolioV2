@@ -1,14 +1,13 @@
 // // import React from 'react'
 import { motion } from 'framer-motion'
 // import { Star } from 'lucide-react'
-import { Github, Instagram, Twitter, Linkedin, Code } from 'lucide-react'
+import { Github, Instagram, Twitter, Linkedin} from 'lucide-react'
 
 const socials = [
-  { icon: <Github size={18} />, href: 'https://github.com/yourusername' },
-  { icon: <Instagram size={18} />, href: 'https://instagram.com/yourusername' },
-  { icon: <Twitter size={18} />, href: 'https://twitter.com/yourusername' },
-  { icon: <Linkedin size={18} />, href: 'https://linkedin.com/in/yourusername' },
-  { icon: <Code size={18} />, href: 'https://yourportfolio.com' },
+  { icon: <Github size={22} />, href: 'https://github.com/codezeros18' },
+  { icon: <Instagram size={22} />, href: 'https://www.instagram.com/lintangbalakosaa/' },
+  { icon: <Twitter size={22} />, href: 'https://x.com/codeee181' },
+  { icon: <Linkedin size={22} />, href: 'https://www.linkedin.com/in/lintang-balakosa-7ab072325/' },
 ]
 
 const Footer = () => {

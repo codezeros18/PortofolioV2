@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-[150px] md:scroll-mt-28 bg-navy text-light-slate font-inter h-[120vh] lg:h-[80vh] flex items-center "
+      className="scroll-mt-[150px] md:scroll-mt-28 bg-navy text-light-slate font-inter h-[120vh] lg:h-[80vh] flex items-center mb-14 md:mb-0 "
     >
       <motion.div
           ref={ref}
