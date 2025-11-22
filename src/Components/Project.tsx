@@ -33,7 +33,7 @@ const Project = () => {
       "A data storytelling dashboard focused on understanding the economic gap between rural and urban regions. Using analysis and machine learning exploration, this project highlights poverty risks, digital access limitations, and inefficiencies in regional development budgets. The result is a strategic narrative that proposes scalable digital transformation solutions aligned with long-term social impact.",
     tech: ["Python", "Pandas", "Scikit-learn"],
     tech2: ["Looker Studio", "Seaborn", "Folium"],
-    external: "https://github.com/codezeros18/",
+    external: "https://lookerstudio.google.com/reporting/967bb698-5e49-4a29-912c-f0a1121bda90",
     image: img3,
   }
 ];
