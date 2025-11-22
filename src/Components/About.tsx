@@ -9,21 +9,21 @@ import { useEffect } from 'react'
 const About = () => {
   const techStack = [
     "JavaScript (ES6+)",
-    "Python",
-    "TypeScript",
-    "NumPy",
     "React",
-    "Pandas",
     "Tailwind CSS",
-    "Matplotlib",
-    "Laravel",
-    "Seaborn",
-    "Git & GitHub",
+    "Python",
+    "Pandas",
+    "NumPy",
     "scikit-learn",
-    "Pyplot",
     "MySQL",
-    "Folium"
-  ]
+    "Node.js",
+    "Git & GitHub",
+    "Matplotlib",
+    "Seaborn",
+    "Google Colab",
+    "Looker Studio"
+  ];
+
   const controls = useAnimation()
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
 
@@ -34,7 +34,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-[150px] md:scroll-mt-28 bg-navy text-light-slate font-inter h-[120vh] lg:h-[80vh] flex items-center mb-14 md:mb-0 "
+      className="scroll-mt-[100px] md:scroll-mt-[120px] bg-navy text-light-slate font-inter py-24"
     >
       <motion.div
           ref={ref}

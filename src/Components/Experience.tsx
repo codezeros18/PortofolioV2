@@ -22,65 +22,84 @@ const Experience = () => {
 
 
   const experiences = [
-    {
-      organization: 'Duta Anti Narkoba',
-      role: 'Website Coordinator',
-      date: 'November 2024 – Present',
-      points: [
-        'Led and organized a web development team, assigning responsibilities for key pages such as About Us and Events to ensure efficient workflow and clear ownership.',
-        'Set up and maintained a collaborative GitHub repository, managing branches and pull requests to streamline team contributions and version control.',
-        'Mentored team members in Tailwind CSS and React, providing guidance and hands-on support to enhance their frontend development skills.',
-      ],
-    },
-    {
-      organization: 'Starlight',
-      role: 'Website Member',
-      date: 'Jan 2025 – Present',
-      points: [
-        'Took charge of managing the division and was responsible for onboarding new members (referred to as Mini Gerda), ensuring a smooth integration into the team.',
-        'Developed an interactive circular carousel with modal functionality, contributing to the organization\'s digital presence and improving user experience.',
-        'Strengthened collaboration and communication skills through active participation in a team-based workflow and cross-functional discussions.',
-      ],
-    },
-    {
-      organization: 'PT AEI',
-      role: 'Frontend Developer (Internship)',
-      date: 'June 2023 - Oct 2023',
-      points: [
-        'Acquired Tailwind & Laravel experience by learning new things.',
-        'Expanded front-end development expertise by proactively learning and implementing Tailwind CSS and Laravel frameworks to build responsive and efficient web applications.',
-      ],
-    },
-    {
-      organization: 'Digital Skola Bootcamp',
-      role: 'Data Science Trainee – Batch 51',
-      date: 'June 2025 – Present',
-      points: [
-        'Currently enrolled in a certified data science bootcamp as part of Batch 51, focused on building real-world skills in data analysis and machine learning.',
-        'Learning key concepts including data wrangling, exploratory data analysis, and model building using Python and libraries such as pandas, matplotlib, seaborn, and scikit-learn.',
-        'Preparing for a real internship component, with upcoming capstone projects designed to simulate industry-level business problems.',
-      ],
-    },
-    {
-      organization: 'Lab AI Workshop',
-      role: 'Student Representative',
-      date: 'March 2025 – Present',
-      points: [
-        'Introduce and present the AI Lab to prospective students and university visitors, explaining the lab’s research areas, projects, and opportunities.',
-        'Help new students understand the role of AI in academic and practical contexts through guided tours and interactive discussions.',
-        'Support community engagement by representing the lab at university events and outreach programs.',
-      ],
-    },
-  ]
+  {
+    organization: "Duta Anti Narkoba",
+    role: "Website Coordinator",
+    date: "Nov 2024 – Present",
+    points: [
+      "Coordinating the development of the official website with clear task delegation and workflow structure.",
+      "Managing GitHub repository for version control, branches, and pull requests.",
+      "Mentoring members in React and Tailwind to improve development efficiency and quality."
+    ],
+  },
+  {
+    organization: "Bisasinema",
+    role: "Frontend Developer – Partnership Project",
+    date: "Jun 2025 – Present",
+    points: [
+      "Built a responsive website to promote workshops, film productions, and creative events.",
+      "Developed an admin panel to manage ticketing, media uploads, and event updates dynamically.",
+      "Implemented structured content architecture to support scalable multimedia publishing."
+    ],
+  },
+  {
+    organization: "Starlight",
+    role: "Website Team Member",
+    date: "Jan 2025 – Nov 2025",
+    points: [
+      "Designed and developed an interactive circular carousel with modal support for showcasing content.",
+      "Managed onboarding and guidance for new members (Mini Gerda), ensuring smooth workflow adoption.",
+      "Improved collaboration through active involvement in cross-functional discussions and solutions."
+    ],
+  },
+  {
+    organization: "SurabayaDev",
+    role: "3rd Place – Developer Battle 2025 (Data Analyst)",
+    date: "Oct 2025",
+    points: [
+      "Analyzed hotel booking data to identify key drivers of revenue loss and cancellation rates.",
+      "Created an interactive dashboard for actionable business insights and decision support.",
+      "Presented clear storytelling and recommendations that impressed judges and achieved 3rd place."
+    ],
+  },
+  {
+    organization: "PT AEI",
+    role: "Frontend Developer Intern",
+    date: "Jun 2023 – Oct 2023",
+    points: [
+      "Developed responsive web interfaces using Laravel Blade & Tailwind CSS.",
+      "Enhanced frontend skills by contributing to real product development and UI improvements."
+    ],
+  },
+  {
+    organization: "Digital Skola Bootcamp",
+    role: "Data Science Trainee – Batch 51",
+    date: "Jun 2025 – Oct 2025",
+    points: [
+      "Learning practical data analysis and machine learning including EDA, modeling, and reporting.",
+      "Developing industry-oriented capstone projects and preparing for internship placement."
+    ],
+  },
+  {
+    organization: "AI Laboratory – University",
+    role: "Student Representative",
+    date: "Mar 2025 – Present",
+    points: [
+      "Introducing AI Lab projects and research areas to prospective students and visitors.",
+      "Supporting outreach and community programs to increase engagement with AI initiatives."
+    ],
+  },
+];
+
 
   return (
-    <section id="experience" className="scroll-mt-[0px] md:scroll-mt-[40px] bg-navy text-light-slate font-inter h-[110vh] md:h-[100vh] flex items-center">
+    <section id="experience" className="scroll-mt-[100px] md:scroll-mt-[120px] bg-navy text-light-slate font-inter py-24 flex items-start">
       <motion.div 
         ref={ref}
         initial={{ opacity: 0, y: 40 }}
         animate={controls}
         transition={{ duration: 0.8, ease: 'easeOut' }}
-        className="mx-auto md:max-w-2xl lg:max-w-3xl px-6 py-24 w-full flex flex-col justify-center">
+className="w-full max-w-3xl mx-auto px-6 py-16 flex flex-col">
         {/* Section Heading */}
         <div className="flex items-center gap-4 mb-6">
             <span className="text-green text-[18px] md:text-[20px] font-fira">02.</span>
@@ -95,7 +114,7 @@ const Experience = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={controls}
           transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="grid md:grid-cols-4 gap-y-8 gap-x-0 md:gap-x-8 md:gap-y-0 items-start">
+         className="flex flex-col md:grid md:grid-cols-4 gap-y-10 gap-x-8 items-start md:items-start w-full">
           {/* Mobile Swiper Tabs */}
          <div className="relative block md:hidden col-span-4 w-full overflow-hidden">
             {/* Scrollable Tabs Container */}
@@ -126,9 +145,6 @@ const Experience = () => {
             </div>
 
           </div>
-
-
-
           <div className="hidden md:flex flex-col border-l border-lightest-navy">
             {experiences.map((exp, idx) => (
               <button

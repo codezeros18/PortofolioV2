@@ -1,8 +1,8 @@
 // import React from 'react'
-import { Github, ExternalLink } from 'lucide-react'
-import img1 from '../assets/capstone.jpg'
-import img2 from '../assets/project.png' // replace with different image
-import img3 from '../assets/fiver2.png' // replace with different image
+import {ExternalLink } from 'lucide-react'
+import img1 from '../assets/p3.webp'
+import img2 from '../assets/p1.webp' // replace with different image
+import img3 from '../assets/p2.webp' // replace with different image
 import { motion} from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
@@ -10,36 +10,33 @@ import { useInView } from 'react-intersection-observer'
 const Project = () => {
   const projects = [
   {
-    title: 'Project Capstone',
+    title: "Dashboard Analysis: Consumer Behavior & Financial Insights",
     description:
-      'Analyzed real-world data to uncover insights and make predictive models through visual exploration and experimentation. Focused on real academic challenges with measurable outcomes.',
-    tech: ['Python', 'Jupyter', 'Pandas', 'NumPy'],
-    tech2: ['Matplotlib', 'Seaborn', 'Scikit-learn'],
-    github: 'https://github.com/codezeros18/',
-    external: 'https://github.com/codezeros18/',
+      "An interactive dashboard built using Python and Looker Studio to uncover how spending behavior impacts financial stress. This project focuses on understanding debt anxiety, consumer priorities, and lifestyle choices through correlation-driven insights. The dashboard uses a modern dark interface with a clear narrative flow to help decision-makers explore what really drives personal finance concerns.",
+    tech: ["Python", "Pandas", "NumPy"],
+    tech2: ["Looker Studio", "Matplotlib", "Seaborn"],
+    external: "https://lookerstudio.google.com/reporting/ebc42c4d-2ba8-40ef-9706-adc54a4c6581",
     image: img1,
   },
   {
-    title: '2D Pixel Game',
+    title: "Bisasinema – Creative Film Community Website",
     description:
-      'A retro-style farming adventure game featuring tile-based maps, animated characters, and interactive gameplay. Designed with a nostalgic pixel art aesthetic.',
-    tech: ['React', 'JavaScript', 'Tailwind CSS'],
-    tech2: ['Vite', 'Tiled Map Editor'],
-    github: 'https://github.com/codezeros18/pti',
-    external: 'https://codezeros18.github.io/pti/',
+      "A responsive website built for a creative film community to showcase workshops, production content, and upcoming events. The platform provides a smooth admin experience for uploading multimedia, and updating program information dynamically. This project strengthens the community’s digital identity and makes it easier to grow engagement with new audiences.",
+    tech: ["React", "Tailwind CSS", "Node.js"],
+    tech2: ["SQL", "Figma", "GitHub"],
+    external: "https://bisasinema.vercel.app/",
     image: img2,
   },
   {
-    title: 'Fiver Home Cloning',
+    title: "Dashboard Analysis – Economic Inequality & Digital Transformation",
     description:
-      'A pixel-perfect remake of a popular freelance platform’s landing page. Rebuilt the layout and components with attention to responsiveness and visual consistency.',
-    tech: ['React', 'TypeScript', 'HeroIcons'],
-    tech2: ['Tailwind CSS', 'Vite'],
-    github: 'https://github.com/codezeros18/fiverr',
-    external: 'https://codezeros18.github.io/fiverr/',
+      "A data storytelling dashboard focused on understanding the economic gap between rural and urban regions. Using analysis and machine learning exploration, this project highlights poverty risks, digital access limitations, and inefficiencies in regional development budgets. The result is a strategic narrative that proposes scalable digital transformation solutions aligned with long-term social impact.",
+    tech: ["Python", "Pandas", "Scikit-learn"],
+    tech2: ["Looker Studio", "Seaborn", "Folium"],
+    external: "https://github.com/codezeros18/",
     image: img3,
   }
-  ]
+];
   return (
     <section id="project" className="scroll-mt-28 bg-navy text-light-slate font-inter min-h-screen">
       <div className="md:max-w-2xl lg:max-w-5xl mx-auto md:px-10 lg:px-6">
@@ -131,9 +128,6 @@ const Project = () => {
                         isEven ? 'md:justify-end' : 'md:justify-start'
                       }`}
                     >
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
-                      </a>
                       <a href={project.external} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
                       </a>

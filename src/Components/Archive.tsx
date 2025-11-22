@@ -1,28 +1,31 @@
-import {Github, FolderGit2 } from 'lucide-react'
+import {ExternalLink, FolderGit2 } from 'lucide-react'
+
 import { motion } from 'framer-motion'
 
 const projects = [
-     {
-    title: 'Library System',
-    description:
-        'A full-featured library management system for admins to manage users, set return deadlines, and ban overdue users. Includes book borrowing, returning, and user tracking functionality.',
-    tech: ['Laravel', 'PHP', 'MySQL', 'Bootstrap', 'XAMPP'],
-    github: 'https://github.com/codezeros18/app-15-ukk',
-    },
     {
-    title: 'Mini Games',
-    description:
-        'A collection of simple browser-based games including Rock Paper Scissors against a bot and a responsive Tic Tac Toe, built for fun and practice in React.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/codezeros18/myself',
-    },
-    {
-    title: 'Simple Spotify',
-    description:
-        'A Mobile minimal music streaming UI clone inspired by Spotify, featuring animated video backgrounds, interactive song cards, and basic playback controls with skip/back support.',
-    tech: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-    github: 'https://github.com/codezeros18/spotify',
-    },
+  title: "Proactive Cancellation Management – Hotel Revenue Strategy",
+  description:
+    "Analyzed booking patterns to identify key drivers of hotel cancellations and built an interactive dashboard for business insights. Helped propose data-backed strategies to protect revenue and improve guest retention.",
+  tech: ["Python", "Pandas", "Looker Studio"],
+  externallink: "https://lookerstudio.google.com/reporting/ec007a62-576c-49a1-be34-2517dd11233d",
+},
+{
+  title: "Industrial Company Profile Website – Energy & Smart Tech",
+  description:
+    "Developed a professional company website to present services and projects in boiler, electrical, and digital innovation. Designed to boost brand credibility and improve client trust through a modern UI.",
+  tech: ["React", "Tailwind CSS", "Vite"],
+  externallink: "https://codezeros18.github.io/perusahaan/",
+},
+{
+  title: "Adventure 2D Pixel Game – Character Exploration",
+  description:
+    "Created a playful 2D pixel game featuring character exploration across multiple areas with hunger and cleanliness survival mechanics. Includes animated sprites, item interactions, and a leveling system for progression.",
+  tech: ["React", "JavaScript", "Tailwind CSS"],
+  externallink: "https://codezeros18.github.io/pti/",
+},
+
+
 ]
 
 const Archive = () => {
@@ -61,8 +64,8 @@ const Archive = () => {
                 <div className="flex items-start justify-between mb-4">
                   <FolderGit2 className="text-green" size={24} />
                   <div className="flex gap-3">
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                    <Github className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
+                    <a href={project.externallink} target="_blank" rel="noopener noreferrer">
+                    <ExternalLink className="w-5 h-5 hover:text-[#64ffda] duration-500 transition" />
                   </a>
                   </div>
                 </div>
